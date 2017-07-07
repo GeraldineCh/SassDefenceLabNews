@@ -1,4 +1,4 @@
-const MainNew = (title) => {
+const MainNew = () => {
   const mainNew = $('<article class="main-new container">');
   const row = $('<div class="row">');
   row.css('background-image', 'url('+ paths.news + labNews.allNews[0].img +')');
