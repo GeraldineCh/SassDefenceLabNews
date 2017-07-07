@@ -7,6 +7,7 @@ const render = (root) => {
   wrapper.append(MainNav());
   wrapper.append(MainNew());
   wrapper.append(SecondaryNews());
+  wrapper.append(Mundo());
   root.append(wrapper);
 }
 const paths = {

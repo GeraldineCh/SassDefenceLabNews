@@ -38,8 +38,8 @@ gulp.task('html', () => {
 
 gulp.task('todo', () => {
   gulp.src([sources.js + 'utils/get-json.js', sources.components + 'navbar.js', sources.components + 'header.js',
-            sources.components + 'main-nav.js', sources.components + 'main-new.js', sources.components + 'secondary-news.js', 
-            sources.js +'app.js'])
+            sources.components + 'main-nav.js', sources.components + 'main-new.js', sources.components + 'secondary-news.js',
+            sources.components + 'mundo.js', sources.js +'app.js'])
   .pipe(concat("bundle.js"))
   .pipe(gulp.dest('./public/assets/js/'));
 });
