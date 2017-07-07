@@ -1,3 +1,16 @@
+var getJSON = (url, cb) => {
+  var xhr = new XMLHttpRequest();
+  xhr.addEventListener('load', () => {
+    if (xhr.status !== 200) {
+      return cb(new Error('Error loading JSON from ' + url + '(' + xhr.status + ')'));
+    } cb(null, xhr.response);
+  });
+
+  xhr.open('GET', url);
+  xhr.responseType = 'json';
+  xhr.send();
+};
+
 const Navbar = () => {
   const nav = $('<nav class="container hidden-xs">');
   const sections = $('<div class="sections pull-left">');
@@ -90,8 +103,60 @@ const MainNav = () => {
   return nav;
 }
 
-const MainNew = () => {
-  return console.log('fdf');;
+const MainNew = (title) => {
+  const mainNew = $('<article class="main-new container">');
+  const row = $('<div class="row">');
+  row.css('background-image', 'url('+ paths.news + labNews.allNews[0].img +')');
+  const mainCol = $('<div class="col-xs-12">');
+  const sectiontitle = $('<h5 class="title"></h5>');
+  const text = $('<div class="col-xs-12 main-new__text">');
+  const col = $('<div class="col-sm-9 col-xs-12">');
+  const heading = $('<h1>'+ labNews.allNews[0].title +'</h1>');
+  const col2 = $('<div class="col-sm-6 hidden-xs">');
+  const subheading = $('<h5>'+ labNews.allNews[0].brief +'</h5>');
+
+  mainNew.append(row);
+  row.append(text);
+  row.append(mainCol);
+  mainCol.append(sectiontitle);
+  row.append(text);
+  text.append(col);
+  col.append(heading);
+  text.append(col2);
+  col2.append(subheading);
+
+  return mainNew;
+}
+
+const SecondaryNews = () => {
+  const container = $('<article class="container secondary-news">');
+  const row = $('<div class="row">');
+  const first = $('<div class="col-sm-6 first-new">');
+  const firstImg = $('<div class="col-sm-12 col-xs-12"></div>');
+  const firstText = $('<div class="col-sm-12 col-xs-12"></div>');
+
+  container.append(row);
+  row.append(first);
+  first.append(firstImg);
+  first.append(firstText);
+
+  const second = $('<div class="col-sm-3 col-xs-12 second-new">');
+  const secondImg = $('<div class="col-sm-12 col-xs-6"></div>');
+  const secondText = $('<div class="col-sm-12 col-xs-6"></div>');
+
+  row.append(second);
+  second.append(secondImg);
+  second.append(secondText);
+
+  const third = $('<div class="col-sm-3 col-xs-12 second-new">');
+  const thirdImg = $('<div class="col-sm-12 col-xs-6"></div>');
+  const thirdText = $('<div class="col-sm-12 col-xs-6"></div>');
+
+  row.append(third);
+  second.append(thirdImg);
+  second.append(thirdText);
+
+  return container;
 }
 
 'use strict';
@@ -101,26 +166,27 @@ const render = (root) => {
   wrapper.append(Navbar());
   wrapper.append(Header());
   wrapper.append(MainNav());
+  wrapper.append(MainNew());
+  wrapper.append(SecondaryNews());
   root.append(wrapper);
 }
-
+const paths = {
+  news: 'assets/img/news/',
+}
 const labNews = {
   allNews: null,
   selectedNew: 0,
   allCategories: null,
-  selectedCategory: 0
+  selectedCategory: null
 }
 
 $( _ => {
-  /*
+
   getJSON('/api/news/', (err, json) => {
   labNews.allNews = json;
   console.log(labNews.allNews);
-  });
-
-  getJSON('/api/news/' + labNews.selectedNew, (err, json) => {
-  labNews.selectedNew = json;
-  console.log(labNews.selectedNew);
+  const root = $('.root');
+  render(root);
   });
 
   getJSON('/api/categories/', (err, json) => {
@@ -128,25 +194,15 @@ $( _ => {
   console.log(labNews.allCategories);
   });
 
-  getJSON('/api/categories/' + labNews.selectedCategory, (err, json) => {
+  getJSON('/api/news/' + labNews.selectedNew, (err, json) => {
+    labNews.selectedNew = json;
+    console.log(labNews.selectedNew);
+  });
+
+});
+/*
+getJSON('/api/categories/' + labNews.selectedCategory, (err, json) => {
   labNews.selectedCategory = json;
   console.log(labNews.selectedCategory);
-  });
+});
 */
-  const root = $('.root');
-  render(root);
-})
-
-
-var getJSON = (url, cb) => {
-  var xhr = new XMLHttpRequest();
-  xhr.addEventListener('load', () => {
-    if (xhr.status !== 200) {
-      return cb(new Error('Error loading JSON from ' + url + '(' + xhr.status + ')'));
-    } cb(null, xhr.response);
-  });
-
-  xhr.open('GET', url);
-  xhr.responseType = 'json';
-  xhr.send();
-};
