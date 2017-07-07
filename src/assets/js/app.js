@@ -6,6 +6,7 @@ const render = (root) => {
   root.append(wrapper);
 }
 
+
 $( _ => {
   const root = $('.root');
   render(root);

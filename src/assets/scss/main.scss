@@ -1,3 +1,63 @@
+@import "components/colors";
+@import "components/fonts";
+
 * {
-  box-sizing: border-box;
+  font-family: $main-font;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.inline-block {
+  display: inline-block;
+}
+
+%icon-nav {
+  width: 21px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav.container {
+  border-bottom: 1px solid $primary-grey;
+  padding: 25px 0 0 0 !important;
+  div {
+    display: inline-block;
+  }
+  h5 {
+    display: inline-block;
+  }
+  .sections, .search {
+    @extend %flex-center;
+    width: 100px;
+  }
+  .sections__icon {
+    @extend %icon-nav;
+    background: url(../img/menu.png) no-repeat;
+  }
+  .search__icon {
+    @extend %icon-nav;
+    background: url(../img/search.png) no-repeat;
+  }
+  .social {
+    padding: 7px 0px;
+    &__fb {
+      @extend %icon-nav;
+      background: url(../img/fb.png) no-repeat;
+    }
+    &__tw {
+      @extend %icon-nav;
+      background: url(../img/tw.png) no-repeat;
+    }
+    &__in {
+      @extend %icon-nav;
+      background: url(../img/in.png) no-repeat;
+    }
+  }
 }
