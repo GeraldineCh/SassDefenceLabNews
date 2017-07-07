@@ -104,13 +104,27 @@ nav.container {
 }
 
 .main-new {
+  padding: 0 30px;
   &__text {
   margin-top: 200px;
+  @media (max-width: 768px) {
+    margin-top: 120px;
+    padding: 0;
+    }
   }
   color: $white;
   .row {
     height: 400px;
     background-position: bottom center;
+    background-size: cover;
+    @media (max-width: 768px) {
+      height: 230px;
+    }
+    h1 {
+      @media (max-width: 768px) {
+      font-size: 1.8rem;
+      }
+    }
     h5 {
       font-size: 1.7rem;
       text-align: justify;
