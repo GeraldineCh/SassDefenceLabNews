@@ -12,12 +12,3 @@ const Header = () => {
 
   return header;
 }
-
-/*
-<header class="header hidden-xs text-center">
-  <img class="logo center-block" alt="Laboratoria" src="assets\img\logoicon.png">
-  <span class="header__date">Lunes, 12 de Julio de 2017</span>
-  <span>|</span>
-  <span class="header__weather">22°</span>
-</header>
-*/
