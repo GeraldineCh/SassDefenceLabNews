@@ -39,6 +39,31 @@ const render = (root) => {
 
 
 $( _ => {
+  /*
+  $.get('/api/news/', (response) => {
+    alert(response);
+  });
+  */
+  getJSON('/api/news/', (err, json) => {
+  //if (err) { return alert(err.message);}
+  console.log(json);
+
+});
+
   const root = $('.root');
   render(root);
 })
+
+
+var getJSON = (url, cb) => {
+  var xhr = new XMLHttpRequest();
+  xhr.addEventListener('load', () => {
+    if (xhr.status !== 200) {
+      return cb(new Error('Error loading JSON from ' + url + '(' + xhr.status + ')'));
+    } cb(null, xhr.response);
+  });
+
+  xhr.open('GET', url);
+  xhr.responseType = 'json';
+  xhr.send();
+};

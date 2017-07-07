@@ -2,7 +2,7 @@ var express = require("express");
 var api = require("./api");
 const app = express();
 
-app.get('/api/news/', function (req, res) {
+app.get('/api/news/', function (req, result) {
     let news = api.news();
 
     news.then( (result) => {

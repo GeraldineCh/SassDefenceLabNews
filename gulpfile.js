@@ -57,26 +57,28 @@ gulp.task('img', ()=>{
 
 
 gulp.task("sass-watch", ["sass"], function (done) {
-  browserSync.reload();
+  //browserSync.reload();
   done();
 });
 
 gulp.task("html-watch", ["html"], function (done) {
-  browserSync.reload();
+  //browserSync.reload();
   done();
 });
 
 gulp.task("todo-watch", ["todo"], function (done) {
-  browserSync.reload();
+  //browserSync.reload();
   done();
 });
 
 gulp.task("serve", () => {
+  /*
   browserSync.init({
     server: {
       baseDir: config.dist
     }
   });
+  */
   gulp.watch(sources.html, ["html-watch"]);
   gulp.watch(sources.rootSass, ["sass-watch"]);
   gulp.watch(['./src/assets/js/components/*.js', sources.js +'app.js'], ["todo-watch"]);
