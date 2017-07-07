@@ -14,6 +14,7 @@ const paths = {
   assets: "/assets/",
   img: "assets/img/*.png",
   html: "**/*.html",
+  img: "assets/img/**/*.png",
   js: "assets/js/",
   sass: "scss/**/*.scss",
   mainSass: "scss/main.scss",
@@ -49,6 +50,11 @@ gulp.task('sass', ()=>{
   }).on("Error", sass.logError))
   .pipe(gulp.dest(config.dist + paths.assets + "css"));
 });
+
+gulp.task('img', ()=>{
+  gulp.src(sources.img).pipe(gulp.dest(config.dist + paths.assets + "img"));
+});
+
 
 gulp.task("sass-watch", ["sass"], function (done) {
   browserSync.reload();
