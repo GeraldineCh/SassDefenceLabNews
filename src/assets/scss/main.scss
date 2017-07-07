@@ -132,6 +132,13 @@ nav.container {
   }
 }
 
+.secondary-news {
+  margin-top: 30px;
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
+}
+
 .first-new {
   &__img {
     width: 100%;
@@ -141,6 +148,11 @@ nav.container {
     color: $white;
     padding: 50px 15px 15px 15px;
     font-size: 2rem;
+    @media (max-width: 768px) {
+      padding: 18px 15px 15px 15px;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
   }
   &__text::after {
     content: 'HOY';
@@ -156,10 +168,22 @@ nav.container {
 .second-new {
   &__img {
     @extend .first-new__img;
+    @media (max-width: 768px) {
+      width: 50%;
+      float: left;
+      height: 80px;
+      object-fit: cover;
+    }
   }
   &__text {
     @extend .first-new__text;
     padding: 23px 15px;
+    @media (max-width: 768px) {
+      padding: 10px;
+      font-size: 1.2rem;
+      height: 80px;
+      margin-bottom: 10px;
+    }
   }
   &__text::after {
     display: none;
