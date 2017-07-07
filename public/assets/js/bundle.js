@@ -1,5 +1,5 @@
 const Navbar = () => {
-  const nav = $('<nav class="container">');
+  const nav = $('<nav class="container hidden-xs">');
   const sections = $('<div class="sections pull-left">');
   const sectionsIcon = $('<a href="#" class="sections__icon"></a>');
   const sectionsTitle = $('<h5 class="uppercase">Sections</h5>');
@@ -26,6 +26,7 @@ const Navbar = () => {
   social.append(socialTw);
   social.append(socialIn);
 
+
   return nav;
 }
 
@@ -45,6 +46,7 @@ const labNews = {
 }
 
 $( _ => {
+  /*
   getJSON('/api/news/', (err, json) => {
   labNews.allNews = json;
   console.log(labNews.allNews);
@@ -64,7 +66,7 @@ $( _ => {
   labNews.selectedCategory = json;
   console.log(labNews.selectedCategory);
   });
-
+*/
   const root = $('.root');
   render(root);
 })

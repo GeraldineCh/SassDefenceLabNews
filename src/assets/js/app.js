@@ -14,6 +14,7 @@ const labNews = {
 }
 
 $( _ => {
+  /*
   getJSON('/api/news/', (err, json) => {
   labNews.allNews = json;
   console.log(labNews.allNews);
@@ -33,7 +34,7 @@ $( _ => {
   labNews.selectedCategory = json;
   console.log(labNews.selectedCategory);
   });
-
+*/
   const root = $('.root');
   render(root);
 })
