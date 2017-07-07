@@ -3,6 +3,7 @@ const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
   wrapper.append(Navbar());
+  wrapper.append(MainNav());
   root.append(wrapper);
 }
 

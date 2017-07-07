@@ -37,7 +37,7 @@ gulp.task('html', () => {
 });
 
 gulp.task('todo', () => {
-  gulp.src([sources.components + 'navbar.js', sources.js +'app.js'])
+  gulp.src([sources.components + 'navbar.js', sources.components + 'main-nav.js',sources.js +'app.js'])
   .pipe(concat("bundle.js"))
   .pipe(gulp.dest('./public/assets/js/'));
 });
@@ -72,13 +72,13 @@ gulp.task("todo-watch", ["todo"], function (done) {
 });
 
 gulp.task("serve", () => {
-  
+
   browserSync.init({
     server: {
       baseDir: config.dist
     }
   });
-  
+
   gulp.watch(sources.html, ["html-watch"]);
   gulp.watch(sources.rootSass, ["sass-watch"]);
   gulp.watch(['./src/assets/js/components/*.js', sources.js +'app.js'], ["todo-watch"]);
