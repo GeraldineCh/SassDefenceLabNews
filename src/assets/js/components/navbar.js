@@ -26,6 +26,5 @@ const Navbar = () => {
   social.append(socialTw);
   social.append(socialIn);
 
-
   return nav;
 }
