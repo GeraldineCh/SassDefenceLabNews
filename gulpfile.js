@@ -37,7 +37,7 @@ gulp.task('html', () => {
 });
 
 gulp.task('todo', () => {
-  gulp.src([sources.components + 'navbar.js', sources.components + 'main-nav.js',sources.js +'app.js'])
+  gulp.src([sources.components + 'navbar.js', sources.components + 'header.js', sources.components + 'main-nav.js',sources.js +'app.js'])
   .pipe(concat("bundle.js"))
   .pipe(gulp.dest('./public/assets/js/'));
 });
