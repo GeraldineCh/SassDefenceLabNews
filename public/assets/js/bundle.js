@@ -37,18 +37,19 @@ const render = (root) => {
   root.append(wrapper);
 }
 
+const labNews = {
+  allNews: null,
+  selectedNew: null,
+  allCategories: null,
+  selectedCategory: null
+}
+
 
 $( _ => {
-  /*
-  $.get('/api/news/', (response) => {
-    alert(response);
-  });
-  */
   getJSON('/api/news/', (err, json) => {
-  //if (err) { return alert(err.message);}
-  console.log(json);
-
-});
+  labNews.allNews = json;
+  console.log(labNews.allNews);
+  });
 
   const root = $('.root');
   render(root);

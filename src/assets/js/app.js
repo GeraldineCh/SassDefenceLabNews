@@ -15,17 +15,10 @@ const labNews = {
 
 
 $( _ => {
-  /*
-  $.get('/api/news/', (response) => {
-    alert(response);
-  });
-  */
   getJSON('/api/news/', (err, json) => {
-  //if (err) { return alert(err.message);}
   labNews.allNews = json;
   console.log(labNews.allNews);
-
-});
+  });
 
   const root = $('.root');
   render(root);
