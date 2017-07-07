@@ -1,1 +1,3 @@
-console.log('navbar');
+const Navbar = () => {
+  return $('<h1>adasdsa</h1>');
+}

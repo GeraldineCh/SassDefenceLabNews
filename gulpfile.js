@@ -1,16 +1,16 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserify = require('gulp-browserify');
-var rename = require('gulp-rename');
-var browserSync = require('browser-sync').create();
-var concat = require('gulp-concat');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const browserify = require('gulp-browserify');
+const rename = require('gulp-rename');
+const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
 
-var config = {
+const config = {
   source: './src/',
   dist: './public'
 };
 
-var paths = {
+const paths = {
   assets: "/assets/",
   img: "assets/img/*.png",
   html: "**/*.html",
@@ -20,7 +20,7 @@ var paths = {
   components: "assets/js/components/",
 };
 
-var sources = {
+const sources = {
   assets: config.source + paths.assets,
   html: config.source + paths.html,
   js: config.source + paths.js,
