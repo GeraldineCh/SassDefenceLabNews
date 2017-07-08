@@ -96,6 +96,9 @@ nav.container {
 
 .header {
   padding: 22px;
+  img {
+    cursor: pointer;
+  }
   span {
     display: inline-block;
     margin-right: 10px;
@@ -117,6 +120,7 @@ nav.container {
     height: 400px;
     background-position: bottom center;
     background-size: cover;
+    cursor: pointer;
     @media (max-width: 768px) {
       height: 230px;
     }
@@ -202,23 +206,24 @@ nav.container {
   }
 }
 
+.article-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.article-title::after {
+  content: '';
+  background-color: #f7b617;
+  width: 50px;
+  height: 6px;
+  bottom: 10px;
+  left: 15px;
+  position: absolute;
+}
+
 .mundo {
   img {
     width: 100%;
     background-size: cover;
-  }
-  .article-title {
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-  .article-title::after {
-    content: '';
-    background-color: #f7b617;
-    width: 50px;
-    height: 6px;
-    bottom: 10px;
-    left: 15px;
-    position: absolute;
   }
 }
 
@@ -347,4 +352,19 @@ nav.container {
 }
 .bottom-news__text::after {
   display: none;
+}
+
+.tecnologia {
+  img {
+    width: 100%;
+  }
+  .top-left__img {
+    height: 93.47px;
+  }
+  .top-right__img {
+    height: 93.47px;
+  }
+  .bottom-new__img, .middle-new__img {
+    height: 94.95px;
+  }
 }

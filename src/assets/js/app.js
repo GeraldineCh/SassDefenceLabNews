@@ -11,6 +11,7 @@ const render = (root) => {
     wrapper.append(MainNew(_ => render(root)));
     wrapper.append(SecondaryNews());
     wrapper.append(Mundo());
+    wrapper.append(Tecnologia());
     break;
 
     case 'article':
