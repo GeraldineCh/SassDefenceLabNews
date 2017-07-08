@@ -42,7 +42,7 @@ const Navbar = () => {
   return nav;
 }
 
-const Header = () => {
+const Header = (update) => {
   const header = $('<header class="header hidden-xs text-center">');
   const logo = $('<img class="logo center-block" alt="Laboratoria" src="assets/img/logoicon.png">');
   const date = $('<span class="header__date">Lunes, 12 de Julio de 2017</span>');
@@ -53,6 +53,11 @@ const Header = () => {
   header.append(date);
   header.append(divider);
   header.append(weather);
+
+  logo.on('click', () => {
+    state.currScreen = 'principal'
+    update();
+  })
 
   return header;
 }
@@ -103,7 +108,7 @@ const MainNav = () => {
   return nav;
 }
 
-const MainNew = () => {
+const MainNew = (update) => {
   const mainNew = $('<article class="main-new container">');
   const row = $('<div class="row">');
   row.css('background-image', 'url('+ paths.news + labNews.allNews[0].img +')');
@@ -124,6 +129,12 @@ const MainNew = () => {
   col.append(heading);
   text.append(col2);
   col2.append(subheading);
+
+  row.on('click', () => {
+    state.currScreen = 'article'
+    update();
+  })
+
 
   return mainNew;
 }
@@ -257,26 +268,46 @@ const Mundo = () => {
   return container;
 }
 
+const Article = () => {
+  return $('<h1>sdfsdf</h1>');
+}
+
 'use strict';
 const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
   wrapper.append(Navbar());
-  wrapper.append(Header());
+  wrapper.append(Header(_ => render(root)));
   wrapper.append(MainNav());
-  wrapper.append(MainNew());
-  wrapper.append(SecondaryNews());
-  wrapper.append(Mundo());
+
+  switch (state.currScreen) {
+    case 'principal':
+    wrapper.append(MainNew(_ => render(root)));
+    wrapper.append(SecondaryNews());
+    wrapper.append(Mundo());
+    break;
+
+    case 'article':
+    wrapper.append(Article());
+    break;
+  }
+
   root.append(wrapper);
 }
+
 const paths = {
   news: 'assets/img/news/',
 }
+
 const labNews = {
   allNews: null,
   selectedNew: 0,
   allCategories: null,
   selectedCategory: null
+}
+
+const state = {
+  currScreen: 'principal'
 }
 
 $( _ => {

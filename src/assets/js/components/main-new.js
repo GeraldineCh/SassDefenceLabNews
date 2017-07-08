@@ -1,4 +1,4 @@
-const MainNew = () => {
+const MainNew = (update) => {
   const mainNew = $('<article class="main-new container">');
   const row = $('<div class="row">');
   row.css('background-image', 'url('+ paths.news + labNews.allNews[0].img +')');
@@ -19,6 +19,12 @@ const MainNew = () => {
   col.append(heading);
   text.append(col2);
   col2.append(subheading);
+
+  row.on('click', () => {
+    state.currScreen = 'article'
+    update();
+  })
+
 
   return mainNew;
 }

@@ -3,21 +3,37 @@ const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
   wrapper.append(Navbar());
-  wrapper.append(Header());
+  wrapper.append(Header(_ => render(root)));
   wrapper.append(MainNav());
-  wrapper.append(MainNew());
-  wrapper.append(SecondaryNews());
-  wrapper.append(Mundo());
+
+  switch (state.currScreen) {
+    case 'principal':
+    wrapper.append(MainNew(_ => render(root)));
+    wrapper.append(SecondaryNews());
+    wrapper.append(Mundo());
+    break;
+
+    case 'article':
+    wrapper.append(Article());
+    break;
+  }
+
   root.append(wrapper);
 }
+
 const paths = {
   news: 'assets/img/news/',
 }
+
 const labNews = {
   allNews: null,
   selectedNew: 0,
   allCategories: null,
   selectedCategory: null
+}
+
+const state = {
+  currScreen: 'principal'
 }
 
 $( _ => {
