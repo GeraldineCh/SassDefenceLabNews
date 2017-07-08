@@ -23,11 +23,20 @@ const Article = () => {
 
   row.append(colArticle);
   colArticle.append(article);
-  /*
-  const complete = $('');
-  const complete = $('');
-}
 
+  const about = $('<div class="col-sm-12">');
+  const profile = $('<img src="assets/img/authors/' + labNews.selectedNew.author.picture +'" alt="">');
+  const nombre = $('<p>'+labNews.selectedNew.author.name+'</p>');
+  //const date = $('<p>'+labNews.selectedNew.published-date+'</p>');
+  const user = $('<p>'+labNews.selectedNew.author.user+'</p>');
+
+  colArticle.append(about);
+  colArticle.append(profile);
+  colArticle.append(nombre);
+  //colArticle.append(date);
+  colArticle.append(user);
+
+/*
     <div class="col-sm-9">
       <p></p>
     </div>
