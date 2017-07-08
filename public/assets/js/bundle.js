@@ -62,8 +62,8 @@ const Header = (update) => {
   return header;
 }
 
-const MainNav = () => {
-  
+const MainNav = (update) => {
+
   const nav = $('<nav class="navbar navbar-default">');
   const container = $('<div class="container">');
   const navbarHeader = $('<div class="navbar-header visible-xs">');
@@ -102,7 +102,12 @@ const MainNav = () => {
   hamburguer.on("click", function(){
    $(this).toggleClass("collapsed");
    //$(this).parent().addClass("active");
-});
+  });
+
+  logo.on('click', () => {
+    state.currScreen = 'principal'
+    update();
+  })
 
 
   return nav;
@@ -132,11 +137,12 @@ const MainNew = (update) => {
 
   row.on('click', () => {
     state.currScreen = 'article';
-    getJSON('/api/news/' + labNews.selectedNew, (err, json) => {
+    labNews.id = 0;
+    getJSON('/api/news/' + labNews.id, (err, json) => {
       labNews.selectedNew = json;
       console.log(labNews.selectedNew);
+      update();
     });
-    update();
   });
 
   return mainNew;
@@ -282,26 +288,25 @@ const Article = () => {
   mainCol.append(sectionTitle);
 
   const colTitles = $('<div class="col-sm-12">');
-  const h3 = $('<h3></h3>');
-  const h5 = $('<h5></h5>');
+  const h3 = $('<h3>'+ labNews.selectedNew.title +'</h3>');
+  const h5 = $('<h5>'+ labNews.selectedNew.brief +'</h5>');
+  const img = $('<img src="'+ paths.news + labNews.selectedNew.img +'" alt="">');
 
   row.append(colTitles);
   colTitles.append(h3);
   colTitles.append(h5);
-  
-  const complete = $('');
-  const complete = $('');
-  const complete = $('');
+  colTitles.append(img);
+
+  const colArticle = $('<div class="col-sm-9">');
+  const article = $(labNews.selectedNew.body);
+
+  row.append(colArticle);
+  colArticle.append(article);
+  /*
   const complete = $('');
   const complete = $('');
 }
 
-
-    <div class="col-sm-12">
-      <h3></h3>
-      <h5></h5>
-    </div>
-    <img src="" alt="">
     <div class="col-sm-9">
       <p></p>
     </div>
@@ -313,6 +318,9 @@ const Article = () => {
     </div>
   </div>
 </div>
+*/
+  return container;
+}
 
 'use strict';
 const render = (root) => {
@@ -320,7 +328,7 @@ const render = (root) => {
   const wrapper = $('<div class="wrapper"></div>');
   wrapper.append(Navbar());
   wrapper.append(Header(_ => render(root)));
-  wrapper.append(MainNav());
+  wrapper.append(MainNav(_ => render(root)));
 
   switch (state.currScreen) {
     case 'principal':
@@ -343,6 +351,7 @@ const paths = {
 
 const labNews = {
   allNews: null,
+  id: null,
   selectedNew: null,
   allCategories: null,
   selectedCategory: null

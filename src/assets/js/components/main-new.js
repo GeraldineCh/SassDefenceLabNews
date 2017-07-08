@@ -22,11 +22,12 @@ const MainNew = (update) => {
 
   row.on('click', () => {
     state.currScreen = 'article';
-    getJSON('/api/news/' + labNews.selectedNew, (err, json) => {
+    labNews.id = 0;
+    getJSON('/api/news/' + labNews.id, (err, json) => {
       labNews.selectedNew = json;
       console.log(labNews.selectedNew);
+      update();
     });
-    update();
   });
 
   return mainNew;

@@ -9,26 +9,25 @@ const Article = () => {
   mainCol.append(sectionTitle);
 
   const colTitles = $('<div class="col-sm-12">');
-  const h3 = $('<h3></h3>');
-  const h5 = $('<h5></h5>');
+  const h3 = $('<h3>'+ labNews.selectedNew.title +'</h3>');
+  const h5 = $('<h5>'+ labNews.selectedNew.brief +'</h5>');
+  const img = $('<img src="'+ paths.news + labNews.selectedNew.img +'" alt="">');
 
   row.append(colTitles);
   colTitles.append(h3);
   colTitles.append(h5);
-  
-  const complete = $('');
-  const complete = $('');
-  const complete = $('');
+  colTitles.append(img);
+
+  const colArticle = $('<div class="col-sm-9">');
+  const article = $(labNews.selectedNew.body);
+
+  row.append(colArticle);
+  colArticle.append(article);
+  /*
   const complete = $('');
   const complete = $('');
 }
 
-
-    <div class="col-sm-12">
-      <h3></h3>
-      <h5></h5>
-    </div>
-    <img src="" alt="">
     <div class="col-sm-9">
       <p></p>
     </div>
@@ -40,3 +39,6 @@ const Article = () => {
     </div>
   </div>
 </div>
+*/
+  return container;
+}

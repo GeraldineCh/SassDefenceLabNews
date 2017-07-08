@@ -1,5 +1,5 @@
-const MainNav = () => {
-  
+const MainNav = (update) => {
+
   const nav = $('<nav class="navbar navbar-default">');
   const container = $('<div class="container">');
   const navbarHeader = $('<div class="navbar-header visible-xs">');
@@ -38,7 +38,12 @@ const MainNav = () => {
   hamburguer.on("click", function(){
    $(this).toggleClass("collapsed");
    //$(this).parent().addClass("active");
-});
+  });
+
+  logo.on('click', () => {
+    state.currScreen = 'principal'
+    update();
+  })
 
 
   return nav;

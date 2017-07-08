@@ -4,7 +4,7 @@ const render = (root) => {
   const wrapper = $('<div class="wrapper"></div>');
   wrapper.append(Navbar());
   wrapper.append(Header(_ => render(root)));
-  wrapper.append(MainNav());
+  wrapper.append(MainNav(_ => render(root)));
 
   switch (state.currScreen) {
     case 'principal':
@@ -27,6 +27,7 @@ const paths = {
 
 const labNews = {
   allNews: null,
+  id: null,
   selectedNew: null,
   allCategories: null,
   selectedCategory: null
