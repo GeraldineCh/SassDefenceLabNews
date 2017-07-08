@@ -21,10 +21,13 @@ const MainNew = (update) => {
   col2.append(subheading);
 
   row.on('click', () => {
-    state.currScreen = 'article'
+    state.currScreen = 'article';
+    getJSON('/api/news/' + labNews.selectedNew, (err, json) => {
+      labNews.selectedNew = json;
+      console.log(labNews.selectedNew);
+    });
     update();
-  })
-
+  });
 
   return mainNew;
 }

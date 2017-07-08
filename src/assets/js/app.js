@@ -27,7 +27,7 @@ const paths = {
 
 const labNews = {
   allNews: null,
-  selectedNew: 0,
+  selectedNew: null,
   allCategories: null,
   selectedCategory: null
 }
@@ -46,16 +46,10 @@ $( _ => {
       labNews.allCategories = json;
       console.log(labNews.allCategories);
 
-      getJSON('/api/news/' + labNews.selectedNew, (err, json) => {
-        labNews.selectedNew = json;
-        console.log(labNews.selectedNew);
-
         const root = $('.root');
         render(root);
-      });
     });
   });
-
 });
 
 /*
