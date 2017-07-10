@@ -279,6 +279,9 @@ nav.container {
   bottom: 10px;
   left: 15px;
   position: absolute;
+  @media (max-width: 768px) {
+    bottom: -9px;
+  }
 }
 
 .mundo {
