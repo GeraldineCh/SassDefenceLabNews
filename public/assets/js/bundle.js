@@ -64,53 +64,35 @@ const Header = (update) => {
 
 const MainNav = (update) => {
 
-  const nav = $('<nav class="navbar navbar-default">');
-  const container = $('<div class="container">');
-  const navbarHeader = $('<div class="navbar-header visible-xs">');
-  const hamburguer = $('<span class="navbar-toggle collapsed navbar-header__hamburguer" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">');
-  const logo = $('<img class="navbar-brand" alt="Laboratoria" src="assets/img/logoicon.png">');
+const header = $('<header></header>');
+    const nav = $(`<nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Desplegar navegación</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class=" visible-xs" href="#"><img src="assets/img/logoicon.png" class="logo" alt="" width="100%"></a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Lo último</a></li>
+          <li><a href="#">Opinión</a></li>
+          <li><a href="#">Cultura</a></li>
+          <li><a href="#">Perú</a></li>
+          <li><a href="#">Tecología</a></li>
+          <li><a href="#">Mundo</a></li>
+          <li><a href="#">Economía</a></li>
+          <li><a href="#">Lifestyle</a></li>
+          <li><a href="#">Deporte</a></li>
+        </ul>
+      </div>
+      </nav>`);
 
-  nav.append(container);
-  container.append(navbarHeader);
-  navbarHeader.append(hamburguer);
-  navbarHeader.append(logo);
-
-
-  const collapse = $('<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">');
-  const ul = $('<ul class="nav navbar-nav">');
-  const ultimo = $('<li><a href="#" class="navbar-nav__tab navbar-nav__tab--hover">Lo último</a></li>');
-  const opinion = $('<li><a href="#" class="navbar-nav__tab navbar-nav__tab--hover">Opinión</a></li>');
-  const cultura = $('<li><a href="#" class="navbar-nav__tab navbar-nav__tab--hover">Cultura</a></li>');
-  const peru = $('<li><a href="#" class="navbar-nav__tab navbar-nav__tab--hover">Perú</a></li>');
-  const tecnologia = $('<li><a href="#" class="navbar-nav__tab navbar-nav__tab--hover">Tecnología</a></li>');
-  const mundo = $('<li><a href="#" class="navbar-nav__tab navbar-nav__tab--hover">Mundo</a></li>');
-  const economia = $('<li><a href="#" class="navbar-nav__tab navbar-nav__tab--hover">Economía</a></li>');
-  const lifestyle = $('<li><a href="#" class="navbar-nav__tab navbar-nav__tab--hover">Lifestyle</a></li>');
-  const deporte = $('<li><a href="#" class="navbar-nav__tab navbar-nav__tab--hover">Deporte</a></li>');
-
-  container.append(ul);
-  ul.append(ultimo);
-  ul.append(opinion);
-  ul.append(cultura);
-  ul.append(peru);
-  ul.append(tecnologia);
-  ul.append(mundo);
-  ul.append(economia);
-  ul.append(lifestyle);
-  ul.append(deporte);
-
-  hamburguer.on("click", function(){
-   $(this).toggleClass("collapsed");
-   //$(this).parent().addClass("active");
-  });
-
-  logo.on('click', () => {
-    state.currScreen = 'principal'
-    update();
-  })
-
-
-  return nav;
+      header.append(nav);
+      return header;
 }
 
 const MainNew = (update) => {
