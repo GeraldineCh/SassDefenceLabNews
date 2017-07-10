@@ -368,3 +368,16 @@ nav.container {
     height: 94.95px;
   }
 }
+
+.up {
+  background:#000000;
+  border-radius: 10px;
+  bottom:20px;
+  color:#fff;
+  cursor:pointer;
+  font-size:20px;
+	padding:20px;
+	position: fixed;
+	right:20px;
+  z-index: 30;
+}

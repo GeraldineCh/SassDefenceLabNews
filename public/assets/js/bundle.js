@@ -386,6 +386,21 @@ const Tecnologia = () => {
   return container;
 }
 
+const buttonUp = () => {
+  const iconUp = $('<a class="up"></a>');
+  const icon = $('<img src="assets/img/flecha3.png">');
+
+  iconUp.append(icon);
+
+  iconUp.on("click", _=>{
+    $('body').animate({
+      scrollTop: '0px'
+    }, 300);
+  });
+
+  return iconUp;
+}
+
 'use strict';
 const render = (root) => {
   root.empty();
@@ -393,6 +408,7 @@ const render = (root) => {
   wrapper.append(Navbar());
   wrapper.append(Header(_ => render(root)));
   wrapper.append(MainNav(_ => render(root)));
+  wrapper.append(buttonUp());
 
   switch (state.currScreen) {
     case 'principal':

@@ -5,6 +5,7 @@ const render = (root) => {
   wrapper.append(Navbar());
   wrapper.append(Header(_ => render(root)));
   wrapper.append(MainNav(_ => render(root)));
+  wrapper.append(buttonUp());
 
   switch (state.currScreen) {
     case 'principal':
