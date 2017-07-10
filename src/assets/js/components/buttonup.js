@@ -1,5 +1,5 @@
 const buttonUp = () => {
-  const iconUp = $('<a class="up visible-md"></a>');
+  const iconUp = $('<a class="up visible-md visible-lg text-center"></a>');
   const icon = $('<img src="assets/img/flecha3.png"><p>SUBIR</p>');
 
   iconUp.append(icon);
