@@ -1,6 +1,6 @@
 const buttonUp = () => {
-  const iconUp = $('<a class="up"></a>');
-  const icon = $('<img src="assets/img/flecha3.png">');
+  const iconUp = $('<a class="up visible-md"></a>');
+  const icon = $('<img src="assets/img/flecha3.png"><p>SUBIR</p>');
 
   iconUp.append(icon);
 
