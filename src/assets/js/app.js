@@ -13,6 +13,7 @@ const render = (root) => {
     wrapper.append(Mundo());
     wrapper.append(Tecnologia());
     //wrapper.append(Educacion());
+    wrapper.append(Footer());
     break;
 
     case 'article':

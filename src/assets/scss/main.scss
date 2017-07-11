@@ -109,10 +109,10 @@ nav.container {
 .main-new {
   padding: 0 30px;
   &__text {
-  margin-top: 200px;
-  @media (max-width: 768px) {
-    margin-top: 120px;
-    padding: 0;
+    margin-top: 200px;
+    @media (max-width: 768px) {
+      margin-top: 120px;
+      padding: 0;
     }
   }
   color: $white;
@@ -126,7 +126,7 @@ nav.container {
     }
     h1 {
       @media (max-width: 768px) {
-      font-size: 1.8rem;
+        font-size: 1.8rem;
       }
     }
     h5 {
@@ -366,5 +366,46 @@ nav.container {
   }
   .bottom-new__img, .middle-new__img {
     height: 94.95px;
+  }
+}
+
+
+
+
+
+
+// footer
+
+.footer {
+  background-color: $brand-color;
+  margin: 1.5rem 0 0;
+  width: 100%;
+
+  .padding-top-text{
+    color: $white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  &_left{
+    padding-left: 4rem;
+  }
+  &_logo{
+    margin-bottom: 3rem;
+    padding-left: 3rem;
+  }
+  &_center{
+    border-left: 1px solid $white;
+    border-right: 1px solid $white;
+    padding-left: 4rem;
+  }
+  &_right{
+    padding-left: 4rem;
+  }
+  a{
+    color: $white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $complementary-color;
   }
 }
