@@ -12,7 +12,9 @@ const render = (root) => {
     wrapper.append(SecondaryNews());
     wrapper.append(Mundo());
     wrapper.append(Tecnologia());
+    wrapper.append(Slide());
     //wrapper.append(Educacion());
+
     break;
 
     case 'article':
