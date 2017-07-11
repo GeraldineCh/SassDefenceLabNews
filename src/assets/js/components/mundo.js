@@ -26,17 +26,17 @@ const Mundo = () => {
   topRight.append(topRightImg);
   topRight.append(topRightText);
 
-  const topLeft = $('<div class="col-sm-6 top-left hidden-xs">');
-  const topLeftImg = $('<img src="'+ paths.news + labNews.allNews[6].img + '" alt="" class="top-left__img">');
-  const topLeftText = $('<div class="col-sm-12 top-left__text">'+ labNews.allNews[6].title +'</div>');
+  const topLeft = $('<div class="col-sm-6 type-4 hidden-xs">');
+  const topLeftImg = $('<img src="'+ paths.news + labNews.allNews[6].img + '" alt="" class="type-4__img">');
+  const topLeftText = $('<div class="col-sm-12 type-4__text">'+ labNews.allNews[6].title +'</div>');
 
   middleCol.append(topLeft);
   topLeft.append(topLeftImg);
   topLeft.append(topLeftText);
 
-  const middleNew = $('<div class="col-sm-12 middle-new">');
-  const middleNewImg = $('<img src="'+ paths.news + labNews.allNews[8].img + '" alt="" class="middle-new__img pull-left">');
-  const middleNewText = $('<div class="col-sm-7 col-xs-7 middle-new__text">'+ labNews.allNews[8].title +'</div>');
+  const middleNew = $('<div class="col-sm-12 type-5 ">');
+  const middleNewImg = $('<img src="'+ paths.news + labNews.allNews[8].img + '" alt="" class="type-5__img pull-left">');
+  const middleNewText = $('<div class="col-sm-7 col-xs-7 type-5__text">'+ labNews.allNews[8].title +'</div>');
 
   middleCol.append(middleNew);
   middleNew.append(middleNewImg);
@@ -91,7 +91,6 @@ const Mundo = () => {
   row2.append(col4);
   col4.append(img4);
   col4.append(text4);
-
 
   return container;
 }
