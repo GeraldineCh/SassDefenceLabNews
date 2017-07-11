@@ -13,22 +13,20 @@ const Footer = () => {
   const footerRight = $('<div class="col-xs-12 col-sm-4 hidden-xs footer_right">');
   const textRight = $('<p><a>TÉRMINOS Y CONDICIONES DE USO</a><br><a>TRABAJA CON NOSOTROS</a><br><a>LIBRO DE RECLAMACIONES</a><br><a>SEDES PRINCIPALES</a><br><a>POLÍTICAS DE PRIVACIDAD</a></p>');
 
-  const footerSocial = $('<div class="footerSocial col-xs-12">SÍGUENOS</div>');
-  // const social = $('<div class="col-xs-8 ">');
-  const socialFb = $('<a><div class="col-xs-2"><img src="assets/img/fb.png" class="social-footer"></div></a>');
-  const socialTw = $('<a><div class="col-xs-2"><img src="assets/img/tw.png" class="social-footer"></div></a>');
-  const socialIn = $('<a><div class="col-xs-2"><img src="assets/img/in.png" class="social-footer"></div></a>');
+  const footerSocial = $('<div class="footerSocial col-xs-12"><div class="col-xs-4">SÍGUENOS:</div></div>');
+  const socialFb = $('<div class="col-xs-1 icon-social"><a><i class="icon-facebook"></i></a></div>');
+  const socialTw = $('<div class="col-xs-1 icon-social"><a><i class="icon-twitter"></i></a></div>');
+  const socialIn = $('<div class="col-xs-1 icon-social"><a><i class="icon-linkedin"></i></a></div>');
 
+  const more = $('<div class="col-xs-10 col-xs-offset-1 visible-xs footer_more text-center">Ver más</div>');
   footerLeft.append(imgLogo);
   footerLeft.append(textLeft);
   containerFooter.append(footerLeft);
+  containerFooter.append(more);
 
   footerCenter.append(textCenter);
   containerFooter.append(footerCenter);
 
-  // social.append(socialFb);
-  // social.append(socialTw);
-  // social.append(socialIn);
   footerSocial.append(socialFb);
   footerSocial.append(socialTw);
   footerSocial.append(socialIn);

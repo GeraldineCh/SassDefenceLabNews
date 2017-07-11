@@ -18,6 +18,7 @@ const paths = {
   js: "assets/js/",
   sass: "scss/**/*.scss",
   mainSass: "scss/main.scss",
+  font: "scss/fonts/*",
   components: "assets/js/components/",
 };
 
@@ -28,12 +29,17 @@ const sources = {
   img: config.source + paths.img,
   sass: paths.assets + paths.sass,
   rootSass: config.source + paths.assets + paths.mainSass,
+  font: config.source + paths.assets + paths.font,
   components: config.source + paths.components,
   icons: config.source + paths.assets + paths.icons
 };
 
 gulp.task('html', () => {
   gulp.src(sources.html).pipe(gulp.dest(config.dist));
+});
+
+gulp.task('font', () => {
+  gulp.src(sources.font).pipe(gulp.dest('./public/assets/css/fonts/'));
 });
 
 gulp.task('todo', () => {

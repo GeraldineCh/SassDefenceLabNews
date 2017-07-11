@@ -380,7 +380,9 @@ nav.container {
   background-color: $brand-color;
   margin: 1.5rem 0 0;
   width: 100%;
-
+  p {
+    margin-bottom: 1.5rem;
+  }
   .padding-top-text{
     color: $white;
     padding-top: 4rem;
@@ -392,6 +394,10 @@ nav.container {
   &_logo{
     margin-bottom: 3rem;
     padding-left: 3rem;
+  }
+  &_more{
+    border-top: 2px solid $white;
+    padding: 1rem;
   }
   &_center{
     border-left: 1px solid $white;
@@ -407,5 +413,58 @@ nav.container {
   }
   a:hover {
     color: $complementary-color;
+  }
+}
+
+
+// iconos
+.footerSocial{
+  margin-top: 4rem;
+  padding-left: 0;
+}
+.icon-social{
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-path}/icomoon.eot?4u07iy');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?4u07iy#iefix') format('embedded-opentype'),
+  url('#{$icomoon-font-path}/icomoon.ttf?4u07iy') format('truetype'),
+  url('#{$icomoon-font-path}/icomoon.woff?4u07iy') format('woff'),
+  url('#{$icomoon-font-path}/icomoon.svg?4u07iy#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+.icon-linkedin {
+  &:before {
+    content: $icon-linkedin;
   }
 }
