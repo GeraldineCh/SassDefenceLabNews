@@ -33,6 +33,9 @@
 }
 
 .slide__title{
+ position: absolute;
+ bottom: 15px;
+ left: 20px;
  font-size: 1.5em;
 }
 
