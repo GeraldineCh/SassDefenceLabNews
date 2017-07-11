@@ -368,3 +368,30 @@ nav.container {
     height: 94.95px;
   }
 }
+
+
+.owl-carousel{
+  height: 200px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+.owl-carousel .owl-nav .owl-prev, .owl-carousel .owl-nav .owl-next
+{
+  background:$brand-color;
+  display: inline-block;
+  position: absolute;
+  top: 25%;
+}
+
+.owl-carousel .owl-nav .owl-prev{
+  left: 1px;
+}
+
+.owl-carousel .owl-nav .owl-next{
+  right: 1px;
+}
+
+.slide__img{
+  width: 400px;
+  height: 120px;
+}
