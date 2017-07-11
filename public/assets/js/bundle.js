@@ -403,7 +403,8 @@ const Slide = () => {
 
   return slideContainer.owlCarousel({
     loop:true,
-    margin: 7,
+    margin: 3,
+    stagePadding: 16,
     dots: false,
     nav: true,
     navText: ['<img src="assets/img/flecha1.png">', '<img src="assets/img/flecha2.png">'],
