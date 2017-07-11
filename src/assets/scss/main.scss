@@ -375,6 +375,11 @@ nav.container {
   margin-right: 40px;
   margin-left: 40px;
 }
+
+.owl-stage-outer{
+  margin: 40px;
+}
+
 .owl-carousel .owl-nav .owl-prev, .owl-carousel .owl-nav .owl-next
 {
   background:$brand-color;
@@ -392,6 +397,6 @@ nav.container {
 }
 
 .slide__img{
-  width: 400px;
+  width: 300px;
   height: 120px;
 }

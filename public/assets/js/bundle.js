@@ -387,7 +387,7 @@ const Tecnologia = () => {
 }
 
 const Slide = () => {
-  const slideContainer = $('<div class="owl-carousel owl-theme"></div>');
+  const slideContainer = $('<div class="owl-carousel owl-theme container"></div>');
 
   for(var i=26; i<=31; i++){
     const newsContainer = $('<div class="slide__newsContainer"></div>');
